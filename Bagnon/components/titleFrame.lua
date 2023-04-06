@@ -19,7 +19,9 @@ function TitleFrame:New(frameID, parent)
 	b:SetToplevel(true)
 
 	b:SetTextFontObject('GameFontNormal')
+	b:GetTextFontObject():SetJustifyH("LEFT")
 	b:SetHighlightFontObject('GameFontHighlight')
+	b:GetHighlightFontObject():SetJustifyH("LEFT")
 	b:RegisterForClicks('anyUp')
 
 	b:SetScript('OnShow', b.OnShow)
