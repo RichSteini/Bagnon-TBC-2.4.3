@@ -9,7 +9,7 @@ local L = LibStub('AceLocale-3.0'):GetLocale('Bagnon-Config')
 --a hack panel, this is designed to force open to the general options panel when clicked
 local BagnonOptions = Bagnon.OptionsPanel:New('Bagnon', nil, 'Bagnon')
 BagnonOptions:SetScript('OnShow', function(self)
-	InterfaceOptionsFrame_OpenToCategory(Bagnon.GeneralOptions)
+	InterfaceOptionsFrame_OpenToFrame(Bagnon.GeneralOptions)
 	self:Hide()
 end)
 

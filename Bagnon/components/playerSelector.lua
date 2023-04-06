@@ -127,7 +127,7 @@ function PlayerSelector:GetPlayerIcon()
 
 	local sex = UnitSex('player')
 	if sex == 3 then
-		return string.format([[Interface\Icons\Achievement_Character_%s_%s]], enRace, 'Female')
+		return string.format([[Interface\AddOns\Bagnon\textures\Achievement_Character_%s_%s]], enRace, 'Female')
 	end
-	return string.format([[Interface\Icons\Achievement_Character_%s_%s]], enRace, 'Male')
+	return string.format([[Interface\AddOns\Bagnon\textures\Achievement_Character_%s_%s]], enRace, 'Male')
 end

@@ -377,7 +377,7 @@ if hasBlizzQuestHighlight() then
 				return
 			end
 		end
-
+		
 		if self:HighlightingItemsByQuality() then
 			if self:GetItem() and quality and quality > 1 then
 				local r, g, b = GetItemQualityColor(quality)
@@ -559,7 +559,7 @@ end
 
 --returns true if the item is a quest item or not
 --in 3.3, includes a second return to determine if the item is a quest starter for a quest the player lacks
-local QUEST_ITEM_SEARCH = string.format('t:%s|%s', select(12, GetAuctionItemClasses()), 'quest')
+local QUEST_ITEM_SEARCH = string.format('t:%s|%s', select(11, GetAuctionItemClasses()), 'quest')
 
 if hasBlizzQuestHighlight() then
 	function ItemSlot:IsQuestItem()

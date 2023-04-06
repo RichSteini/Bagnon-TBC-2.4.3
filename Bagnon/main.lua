@@ -401,7 +401,7 @@ end
 
 function Bagnon:ShowOptions()
 	if LoadAddOn('Bagnon_Config') then
-		InterfaceOptionsFrame_OpenToCategory(self.GeneralOptions)
+		InterfaceOptionsFrame_OpenToFrame(self.GeneralOptions)
 		return true
 	end
 	return false

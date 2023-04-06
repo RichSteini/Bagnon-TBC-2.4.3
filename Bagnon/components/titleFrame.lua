@@ -18,8 +18,8 @@ function TitleFrame:New(frameID, parent)
 	local b = self:Bind(CreateFrame('Button', nil, parent))
 	b:SetToplevel(true)
 
-	b:SetNormalFontObject('GameFontNormalLeft')
-	b:SetHighlightFontObject('GameFontHighlightLeft')
+	b:SetTextFontObject('GameFontNormal')
+	b:SetHighlightFontObject('GameFontHighlight')
 	b:RegisterForClicks('anyUp')
 
 	b:SetScript('OnShow', b.OnShow)

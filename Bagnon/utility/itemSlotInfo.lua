@@ -16,6 +16,7 @@ function ItemSlotInfo:GetItemInfo(player, bag, slot)
 		end
 	else
 		texture, count, locked, quality, readable, lootable, link = GetContainerItemInfo(bag, slot)
+		link = GetContainerItemLink(bag, slot)
 		
 		--GetContainerItemInfo does not return a quality value for all items.  If it does not, it returns -1
 		if link and quality < 0 then
@@ -29,7 +30,11 @@ function ItemSlotInfo:IsLocked(player, bag, slot)
 	if self:IsCached(player, bag, slot) then
 		return false
 	end
-	return (select(3, GetContainerItemInfo(bag, slot)))
+
+	local texture, count, locked, quality, readable, lootable, link = GetContainerItemInfo(bag, slot)
+	link = GetContainerItemLink(bag, slot)
+	--return (select(3, GetContainerItemInfo(bag, slot)))
+	return locked, quality, readable, lootable, link
 end
 
 function ItemSlotInfo:IsCached(player, bag, slot)

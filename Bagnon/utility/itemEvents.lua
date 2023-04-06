@@ -116,6 +116,7 @@ function BagEvents:UpdateItem(bag, slot)
 		local prevCount = data[2]
 
 		local texture, count, locked, quality, readable, lootable, link = GetContainerItemInfo(bag, slot)
+		link = GetContainerItemLink(bag, slot)
 		local start, duration, enable = GetContainerItemCooldown(bag, slot)
 		local onCooldown = (start > 0 and duration > 0 and enable > 0)
 

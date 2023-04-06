@@ -117,6 +117,7 @@ function ItemSlot:TEXT_SEARCH_UPDATE(msg, frameID, search)
 end
 
 function ItemSlot:ITEM_HIGHLIGHT_QUALITY_UPDATE(msg, enable)
+	print("hier")
 	self:UpdateBorder()
 end
 
