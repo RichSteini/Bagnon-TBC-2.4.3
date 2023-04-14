@@ -52,6 +52,7 @@ function FrameOptions:UpdateMessages()
 	self:RegisterMessage('MONEY_FRAME_ENABLE_UPDATE')
 	self:RegisterMessage('DATABROKER_FRAME_ENABLE_UPDATE')
 	self:RegisterMessage('SEARCH_TOGGLE_ENABLE_UPDATE')
+	self:RegisterMessage('SORT_BUTTON_ENABLE_UPDATE')
 	self:RegisterMessage('SLOT_ORDER_UPDATE')
 	self:RegisterMessage('OPTIONS_TOGGLE_ENABLE_UPDATE')
 end
@@ -122,6 +123,12 @@ function FrameOptions:SEARCH_TOGGLE_ENABLE_UPDATE(msg, frameID, enable)
 	end
 end
 
+function FrameOptions:SORT_BUTTON_ENABLE_UPDATE(msg, frameID, enable)
+	if self:GetFrameID() == frameID then
+		self:GetSortButtonCheckbox():UpdateChecked()
+	end
+end
+
 function FrameOptions:SLOT_ORDER_UPDATE(msg, frameID, enable)
 	if self:GetFrameID() == frameID then
 		self:GetReverseSlotOrderCheckbox():UpdateChecked()
@@ -178,8 +185,11 @@ function FrameOptions:AddWidgets()
 	local toggleDBOFrame = self:CreateToggleDBOFrameCheckbox()
 	toggleDBOFrame:SetPoint('TOPLEFT', toggleMoneyFrame, 'BOTTOMLEFT', 0, -CHECK_BUTTON_SPACING)
 
+	local sortButtonFrame = self:CreateSortButtonCheckbox()
+	sortButtonFrame:SetPoint('TOPLEFT', toggleDBOFrame, 'BOTTOMLEFT', 0, -CHECK_BUTTON_SPACING)
+
 	local toggleSearchFrame = self:CreateToggleSearchFrameCheckbox()
-	toggleSearchFrame:SetPoint('TOPLEFT', toggleDBOFrame, 'BOTTOMLEFT', 0, -CHECK_BUTTON_SPACING)
+	toggleSearchFrame:SetPoint('TOPLEFT', sortButtonFrame, 'BOTTOMLEFT', 0, -CHECK_BUTTON_SPACING)
 	
 	local toggleOptionsFrame = self:CreateToggleOptionsCheckbox()
 	toggleOptionsFrame:SetPoint('TOPLEFT', toggleSearchFrame, 'BOTTOMLEFT', 0, -CHECK_BUTTON_SPACING)
@@ -250,6 +260,7 @@ function FrameOptions:UpdateWidgets()
 	self:GetToggleDBOFrameCheckbox():UpdateChecked()
 	self:GetToggleSearchFrameCheckbox():UpdateChecked()
 	self:GetToggleOptionsCheckbox():UpdateChecked()
+	self:GetSortButtonCheckbox():UpdateChecked()
 	
 	self:GetReverseSlotOrderCheckbox():UpdateChecked()
 	self:GetReverseSlotOrderCheckbox():SetDisabled(self:GetFrameID() == 'guildbank')
@@ -564,6 +575,26 @@ end
 
 function FrameOptions:GetToggleOptionsCheckbox()
 	return self.toggleOptionsCheckbox
+end
+
+--options sort button
+function FrameOptions:CreateSortButtonCheckbox()
+	local button = Bagnon.OptionsCheckButton:New(L.EnableSortButton, self)
+
+	button.OnEnableSetting = function(self, enable)
+		self:GetParent():GetSettings():SetHasSortButton(enable)
+	end
+
+	button.IsSettingEnabled = function(self, enable)
+		return self:GetParent():GetSettings():HasSortButton()
+	end
+
+	self.sortButtonCheckbox = button
+	return button
+end
+
+function FrameOptions:GetSortButtonCheckbox()
+	return self.sortButtonCheckbox
 end
 
 

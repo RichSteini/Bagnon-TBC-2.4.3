@@ -68,6 +68,7 @@ function Frame:UpdateEvents()
 		self:RegisterMessage('MONEY_FRAME_ENABLE_UPDATE')
 		self:RegisterMessage('DATABROKER_FRAME_ENABLE_UPDATE')
 		self:RegisterMessage('SEARCH_TOGGLE_ENABLE_UPDATE')
+		self:RegisterMessage('SORT_BUTTON_ENABLE_UPDATE')
 		self:RegisterMessage('OPTIONS_TOGGLE_ENABLE_UPDATE')
 	end
 end
@@ -170,6 +171,12 @@ function Frame:DATABROKER_FRAME_ENABLE_UPDATE(msg, frameID, enable)
 end
 
 function Frame:SEARCH_TOGGLE_ENABLE_UPDATE(msg, frameID, enable)
+	if self:GetFrameID() == frameID then
+		self:Layout()
+	end
+end
+
+function Frame:SORT_BUTTON_ENABLE_UPDATE(msg, frameID, enable)
 	if self:GetFrameID() == frameID then
 		self:Layout()
 	end
@@ -491,6 +498,10 @@ function Frame:PlaceMenuButtons()
 		table.insert(menuButtons, toggle)
 	end
 
+	if self:HasSortButton() then
+		table.insert(menuButtons, self.sortButton or self:CreateSortButton())
+	end
+
 	if self:HasSearchToggle() then
 		local toggle = self:GetSearchToggle() or self:CreateSearchToggle()
 		table.insert(menuButtons, toggle)
@@ -653,6 +664,21 @@ function Frame:PlaceBagFrame()
 		frame:Hide()
 	end
 	return 0, 0
+end
+
+--[[ sort button ]]--
+
+function Frame:CreateSortButton()
+	self.sortButton = Bagnon.SortButton:New(self:GetFrameID(), self)
+	return self.sortButton
+end
+
+function Frame:GetSortButton()
+	return self.sortButton
+end
+
+function Frame:HasSortButton()
+	return self:GetSettings():HasSortButton()
 end
 
 
@@ -881,4 +907,10 @@ end
 
 function Frame:GetSettings()
 	return Bagnon.FrameSettings:Get(self:GetFrameID())
+end
+
+--[[ Shared ]]--
+
+function Frame:SortItems()
+	Bagnon.Sorting:Start(self:GetItemFrame())
 end

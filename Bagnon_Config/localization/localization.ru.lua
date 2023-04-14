@@ -29,6 +29,7 @@ L.EnableMoneyFrame = 'Показывать область денег'
 L.EnableDBOFrame = 'Показывать область databroker'
 L.EnableSearchToggle = 'Показывать кнопку поиска'
 L.EnableOptionsToggle = 'Показывать кнопку настроек'
+L.EnableSortButton = "Enable sort button"
 L.EnableFrame_inventory = 'Включить область инвентаря'
 L.EnableFrame_bank = 'Включить область банка'
 L.EnableFrame_keys = 'Включить связку ключей'

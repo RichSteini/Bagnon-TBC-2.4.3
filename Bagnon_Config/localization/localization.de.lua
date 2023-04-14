@@ -28,6 +28,7 @@ L.EnableMoneyFrame = 'Gold-Anzeige aktivieren'
 L.EnableDBOFrame = 'Databroker-Anzeige aktivieren'
 L.EnableSearchToggle = 'Suchfeld aktivieren'
 L.EnableOptionsToggle = 'Schalter f\195\188r die Optionen aktivieren'
+L.EnableSortButton = "Schalter f\195\188r den Sortierfunktion"
 L.EnableFrame_inventory = 'Inventar aktivieren'
 L.EnableFrame_bank = 'Bank aktivieren'
 L.EnableFrame_keys = 'Schl\195\188sselbund aktivieren'

@@ -28,6 +28,7 @@ L.EnableMoneyFrame = 'Enable money frame'
 L.EnableDBOFrame = 'Enable databroker frame'
 L.EnableSearchToggle = 'Enable search toggle'
 L.EnableOptionsToggle = 'Enable options toggle'
+L.EnableSortButton = "Enable sort button"
 L.EnableFrame_inventory = 'Enable inventory frame'
 L.EnableFrame_bank = 'Enable bank frame'
 L.EnableFrame_keys = 'Enable keyring'

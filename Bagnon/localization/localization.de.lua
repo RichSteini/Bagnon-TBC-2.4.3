@@ -34,6 +34,7 @@ L.TitleKeys = '%s\'s Schl\195\188ssel'
 --tooltips
 L.TipBank = 'Bank'
 L.TipChangePlayer = '<Klicken> um die Gegenst\195\164nde anderer Charaktere anzuzeigen.'
+L.TipCleanItems = '<Klicken> um die Taschen zu sortieren.'
 L.TipGoldOnRealm = 'Auf %s gesamt'
 L.TipHideBag = '<Klicken> um diese Tasche zu verstecken.'
 L.TipHideBags = '<Klicken> um die Taschenanzeige zu verstecken.'

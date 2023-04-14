@@ -33,6 +33,7 @@ L.EnableMoneyFrame = '啟用貨幣窗口'
 L.EnableDBOFrame = '啟用資訊視窗'
 L.EnableSearchToggle = '啟用搜索按鈕'
 L.EnableOptionsToggle = '啟用設置按鈕'
+L.EnableSortButton = "Enable sort button"
 L.EnableFrame_inventory = '啟用背包框體'
 L.EnableFrame_bank = '啟用銀行框體'
 L.EnableFrame_keys = '啟用鑰匙鏈框體'

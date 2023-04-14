@@ -34,6 +34,7 @@ L.TitleKeys = '%s\'s Keys'
 --tooltips
 L.TipBank = 'Bank'
 L.TipChangePlayer = 'Click to view another character\'s items.'
+L.TipCleanItems = 'Click to clean items.'
 L.TipGoldOnRealm = '%s Totals'
 L.TipHideBag = 'Click to hide this bag.'
 L.TipHideBags = 'Click to hide the bag frame.'

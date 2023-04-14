@@ -250,6 +250,19 @@ function FrameSettings:HasSearchToggle()
 	return self:GetDB():HasSearchToggle()
 end
 
+function FrameSettings:SetHasSortButton(enable)
+	local enable = enable and true or false
+
+	if self:HasSortButton() ~= enable then
+		self:GetDB():SetHasSortButton(enable)
+		self:SendMessage('SORT_BUTTON_ENABLE_UPDATE', self:HasSortButton())
+	end
+end
+
+function FrameSettings:HasSortButton()
+	return self:GetDB():HasSortButton()
+end
+
 --options toggle
 function FrameSettings:SetHasOptionsToggle(enable)
 	local enable = enable and true or false

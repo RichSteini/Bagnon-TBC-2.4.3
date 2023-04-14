@@ -36,6 +36,7 @@ L.TitleKeys = 'Связка ключей |3-1(%s)'
 --tooltips
 L.TipBank = 'Банк'
 L.TipChangePlayer = '<Клик> - просмотр предметов другого персонажа.'
+L.TipCleanItems = '<Клик> — сортировать предметы.'
 L.TipGoldOnRealm = 'Всего денег на %s'
 L.TipHideBag = '<Клик> - скрыть сумку.'
 L.TipHideBags = '<Клик> - скрыть область сумок.'

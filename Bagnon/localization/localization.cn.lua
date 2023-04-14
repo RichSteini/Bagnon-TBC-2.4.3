@@ -40,6 +40,7 @@ L.TitleKeys = '%s的钥匙链'
 --tooltips
 L.TipBank = '银行'
 L.TipChangePlayer = '查看其他角色的物品'
+L.TipCleanItems = '点击整理物品。'
 L.TipGoldOnRealm = '%s上的总资产'
 L.TipHideBag = '隐藏包裹'
 L.TipHideBags = '隐藏背包'
