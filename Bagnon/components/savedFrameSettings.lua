@@ -443,6 +443,7 @@ function SavedFrameSettings:GetDefaultInventorySettings()
 		hasSearchToggle = true,
 		hasOptionsToggle = true,
 		hasKeyringToggle = true,
+		hasSortButton = true,
 
 		--dbo display object
 		dataBrokerObject = 'BagnonLauncher',
@@ -493,6 +494,7 @@ function SavedFrameSettings:GetDefaultBankSettings()
 		hasSearchToggle = true,
 		hasOptionsToggle = true,
 		hasKeyringToggle = false,
+		hasSortButton = true,
 
 		--dbo display object
 		dataBrokerObject = 'BagnonLauncher',
@@ -535,6 +537,7 @@ function SavedFrameSettings:GetDefaultKeyRingSettings()
 		hasSearchToggle = false,
 		hasOptionsToggle = true,
 		hasKeyringToggle = false,
+		hasSortButton = false,
 
 		--dbo display object
 		dataBrokerObject = 'BagnonLauncher',
