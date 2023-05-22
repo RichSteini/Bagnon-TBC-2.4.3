@@ -140,8 +140,8 @@ function Sort:GetSpaces()
       item.space = spaces[#spaces]
       if link then
         local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount = GetItemInfo(link)
-        item.class = Sort.Classes[itemType].index or 0
-        item.subclass = Sort.Classes[itemType].subClasses[itemSubType] or 0
+        item.class = Sort.Classes[itemType] and Sort.Classes[itemType].index or 0
+        item.subclass = Sort.Classes[itemType] and Sort.Classes[itemType].subClasses[itemSubType] or 0
         item.stack = itemStackCount
         item.count = count
         item.id =  tonumber(link:match("item:(%d+)")) or 0
